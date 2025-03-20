@@ -16,6 +16,7 @@
   font-variation-settings: "wght" var(--font-weight);
   background-image: var(--bg-image);
   background-size: cover;
+  background-attachment: fixed; 
 }
 
 .header {
@@ -25,7 +26,7 @@
   max-inline-size: var(--max-width);
   margin-block: 100px;
   padding-block: clamp(7.5rem, 6.9231rem + 2.4615vw, 8rem);
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font), fantasy, sans-serif;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -87,7 +88,7 @@
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   text-transform: uppercase;
-  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0 4px 4px rgba(0, 0, 0);
   mix-blend-mode: hard-light;
   opacity: 0.5;
 }
@@ -119,25 +120,33 @@
   padding-block-end: 25px;
 }
 
+.heart-box {
+  display: flex;
+  inline-size: 38px;
+  block-size: 38px;
+  justify-content: center;
+  align-content: center;
+  margin-inline-end: 6px;
+  outline: 2px solid transparent;
+}
+
+
 .card__icon-button {
   align-content: center;
   border: none;
   background-color: transparent;
-  transition: outline 0.3s ease;
-  outline: 2px solid transparent;
-  outline-offset: -2px;
   max-block-size: 38px;
   margin-inline-end: 2px;
 }
 
 .card__icon-button:focus {
-  outline: 2px solid transparent;
-  transition: outline 0.3s ease;
+  outline: none
 }
 
-.card__icon-button:focus-visible {
+.heart-box:has(:focus-visible) {
   outline: 2px solid #000;
-  transition: outline 0.3s ease;
+  transition: outline-color 0.3s ease;
+  outline-offset: -2px;
 }
 
 .card__like-button {
@@ -178,7 +187,7 @@
 .button__text {
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
-  line-height: 90%;
+  line-height: 140%;
   vertical-align: middle;
   color: #fff;
   mix-blend-mode: difference;
@@ -186,14 +195,14 @@
   position: relative;
 }
 
-.footer {
+.save {
   inline-size: fit-content;
   margin-inline: auto;
   transition: box-shadow 0.5s ease-in-out;
   background-color: #fff;
 }
 
-.footer__button {
+.save__button {
   padding: 15px 20.5px 15px 19.5px;
   display: grid;
   grid-template-rows: min-content min-content;
@@ -238,15 +247,23 @@
 .save-message .floppy {
   inline-size: 39px;
   align-self: center;
+  margin-inline-end: 20px;
 }
 
 .save-message .button__text {
-  line-height: 150%;
-  margin-inline-start: 20px;
+  line-height: 150%;  
+}
+
+.save__button .button__text {
+  line-height: 100%;  
+}
+
+.ok-form {
+  grid-column: 1 / span 2;
 }
 
 .ok-button {
-  grid-column: 1 / span 2;
+  inline-size: 100%;
   line-height: 90%;
   text-transform: uppercase;
   border: 2px solid #000;
@@ -257,10 +274,10 @@
 }
 
 @media (width >= 700px) {
-  .footer__button {
+  .save__button {
     grid-template-columns: min-content 1fr;
     grid-template-rows: 1fr;
-    padding: 15px 19px 15px 21px;
+    padding: 15px 21px 15px 19px;
   }
 
   .floppy {
@@ -311,13 +328,13 @@
   filter: sepia(0.3) contrast(150%);
 }
 
-.footer:has(:focus-visible) {
+.save:has(:focus-visible) {
   outline: none;
   box-shadow: 2px 2px 0 #000;
   transition: box-shadow 0.5s ease-in-out;
 }
 
-.footer__button:focus {
+.save__button:focus {
   outline: none;
 }
 

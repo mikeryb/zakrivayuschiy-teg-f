@@ -77,20 +77,23 @@
 .like-icon.is-liked .core {
   fill: var(--active-color);
   transition: fill 0.3s;
-  animation: scale 0.3s 0.1s ease-in;
 }
 
 .like-icon.is-liked .main-body {
   fill: var(--active-color);
   transition: fill 0.3s 0.05s;
-  animation: scale 0.3s 0.1s ease-in;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--active-color);
   transition: fill 0.3s 0.06s;
-  animation: scale 0.3s 0.1s ease-in;
 }
+
+.like-icon.is-liked .heart {
+  animation: scale 0.3s 0.1s ease-in;
+  transform-origin: center;
+}
+
 
 .like-icon.is-liked .sparks {
   animation: sparks 0.3s 0.3s ease-in;
