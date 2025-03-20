@@ -16,7 +16,7 @@
   font-variation-settings: "wght" var(--font-weight);
   background-image: var(--bg-image);
   background-size: cover;
-  background-attachment: fixed; 
+  background-attachment: fixed;
 }
 
 .header {
@@ -130,14 +130,13 @@
   outline: 2px solid transparent;
 }
 
-
 .card__icon-button {
   border: none;
-  background-color: transparent;  
+  background-color: transparent;
 }
 
 .card__icon-button:focus {
-  outline: none
+  outline: none;
 }
 
 .heart-box:has(:focus-visible) {
@@ -248,11 +247,11 @@
 }
 
 .save-message .button__text {
-  line-height: 150%;  
+  line-height: 150%;
 }
 
 .save__button .button__text {
-  line-height: 100%;  
+  line-height: 100%;
 }
 
 .ok-form {
@@ -320,7 +319,6 @@
   filter: sepia(0.6);
 }
 
-
 .multifilter {
   filter: sepia(0.3) contrast(150%);
 }
@@ -347,4 +345,3 @@
 .ok-button:hover {
   cursor: pointer;
 }
-
