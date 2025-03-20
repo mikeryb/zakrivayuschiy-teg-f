@@ -132,11 +132,8 @@
 
 
 .card__icon-button {
-  align-content: center;
   border: none;
-  background-color: transparent;
-  max-block-size: 38px;
-  margin-inline-end: 2px;
+  background-color: transparent;  
 }
 
 .card__icon-button:focus {
